@@ -1,0 +1,488 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+.home-page #navbar__logo{
+    font-family: "Mulish", sans-serif;
+   /* font-weight: bold;*/
+    font-optical-sizing: auto;
+    font-style: italic;
+}
+
+.navbar__item, .button {
+    font-family: "Mulish", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+}
+.navbar {
+    background: #aa00ffe2;
+    height: 110px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    z-index: 0;
+    width: max-width;
+    max-width: 1300px;
+}
+
+#navbar__logo {
+    background-color: #fff;
+    background-image: #fff;
+    background-size: 100%;
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* WebKit-specific */
+    -moz-background-clip: text; /* Mozilla-specific */
+    -webkit-text-fill-color: transparent; /* WebKit-specific */
+    -moz-text-fill-color: transparent; /* Mozilla-specific */
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.bold-text {
+    font-family: "Mulish", sans-serif;
+    font-weight: bold; 
+    color: #fff; /* Set text color */
+    font-size: 4rem; 
+}
+.scroll-container {
+    position: relative;
+    width: 110px; 
+    height: 100px; 
+    background: #8400ff; /* Scroll background color */
+    border: 5px solid #ffca0b; /* Border color */
+    border-radius: 50px; /* Rounded corners for a scroll-like effect */
+    padding: 30px; /* Space around the icon */
+    box-shadow: 0 8px 8px rgba(251, 0, 255, 0.838); /* Optional: add shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2vh;
+}
+
+.scroll-icon {
+    width: 80px; /* Adjust size relative to scroll */
+    height: max-content;
+    object-fit: contain;
+}
+
+.logo_icon {
+    width: 100px; 
+    height: 100px;
+    align-items: center;
+}
+
+.fa-gem{
+    margin-right: 0.2rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center; 
+}
+
+.navbar__item {
+    display: flex;
+    height: 40 px;
+}
+
+.navbar__links {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 90%;
+    white-space: nowrap;
+}
+
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+    color:#fff;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height:100%;
+    border: none;
+    outline:none;
+    border-radius: 3px;
+    /*background: #FE9A768;*/
+    background: #0008ff;
+    color: #ffffff;
+    font-size: 2rem;
+    /*position: relative; 
+    text-shadow: 
+    0 4px 6px rgba(208, 255, 0, 0.537), 0 4px 8px rgb(0, 217, 255); */
+}
+
+.button:hover {
+    /*background: #042DFE;*/
+    background: #a1ff1de8;
+    transition: all 0.3s ease;
+    color: #000000;
+    font-size: 37px;
+}
+
+.navbar__links:hover {
+    /*color: #042DFE;*/
+    color: #ddff00;
+    transition: all 0.3s ease;
+    font-size: 30px;
+    background: #3b00ffa7;
+}
+
+/* whenever this hits 960 pixels the classes following will trigger*/
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px; /*this high number ensures that the drop down menu will never be seen*/
+        opacity: 1; 
+        transition: all 0.5 ease-in-out;
+        height: 10vh;
+        z-index: -1;
+        background: #aa00ffe2;
+    }
+
+    .navbar__menu.active {
+        top: 99%;
+        opacity: 1;
+        z-index: 99;
+        height: 91.5vh;
+        font-size: 1.5rem;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    #navbar__logo {
+        padding-right: 25px;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    }
+
+    .navbar__item{
+        width: 100%
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 3rem;
+        width: 100%;
+        display: table;
+    }
+    /* this following line allows the navigation bar to actually be visible lol*/
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* Main Content Styles */
+.main__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background: linear-gradient(to top, rgba(28, 1, 254, 0), #b700ff);
+    opacity: 1;
+    z-index: 1;
+    width: max-width;
+}
+
+.main_container_image {
+    align-items: center;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-rows: 1fr 1fr;
+}
+
+.main__content h1 {
+    padding: 3rem;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 4rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Download Section Styles */
+.download-section {
+    max-width: max-content;
+    text-align: center;
+    margin-top: 40px;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+    text-shadow: 0 2px 2px rgb(74, 0, 158), 0 2px 2px rgb(255, 0, 217);
+}
+
+.download-section img {
+    max-width: auto;
+    width: auto;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+/* About Us Section Styles */
+.about_us {
+    display: flex;
+    flex-direction: row; /* Puts the image and text side by side */
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: #ffffff; /* Background color for the section */
+    max-width:max-content
+}
+
+.about_us_image {
+        width: 80%; /* Make the image responsive */
+        max-width: 500px; /* Limit the max width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 15px; /* Optional: Add rounded corners */
+ }
+
+.about_image {
+    width: 100%;
+    max-width: 500px; /* Adjust max width as needed */
+    height: auto;
+    border-radius: 15px;
+}
+
+.about_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about_content h2 {
+    font-size: 7rem;
+    color: #3a0abf;
+    font-weight: bold;
+    margin-bottom: 6vh;
+}
+
+.about_content p {
+    display: flex;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: wrap;
+}
+
+/* Image Grid Styles */
+.image-gallery {
+    align-content: start;
+    justify-content: right;
+}
+.image-gallery .star {
+    width: 100%;
+    max-width: 100px; /* Adjust the max width as needed */
+    height: 200%;
+    border-radius: 10px;
+    padding: 200px;
+
+    
+}
+
+.image-gallery .me{
+   
+    width: 450px;
+    height: 350px; /* Ensure it's a square for a perfect circle */
+    border-radius: 50%; /* Make it a circle */
+    border: 8px solid #ffca0b; 
+    align-items: center;
+}
+
+.welcome, .how-to-use, .features_container {
+    margin-top: 10vh;
+    display: block;
+    width: 100%;
+}
+.welcome {
+    margin-top: 10vh;
+    display:block;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    justify-content:space-between;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    text-shadow: 0 2px 6px rgb(74, 0, 158), 0 9px 2px rgb(255, 0, 217);
+    text-wrap: no wrap;
+}
+.welcome p {
+    background-color:rgba(255, 0, 217, 0.623);
+    border-radius: 15px; /* Optional: Add rounded corners */
+}
+
+.welcome img {
+    width: 100%;
+    height: 50vh;
+    margin-right: 10vh;
+
+}
+
+.how-to-use h1{
+    margin-top: 10vh;
+    display:block;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    justify-content:space-between;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    text-shadow: 0 2px 6px rgb(74, 0, 158), 0 9px 2px rgb(255, 0, 217);
+    text-wrap: no wrap;
+}
+
+.how-to-use p{
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    justify-content:space-between;
+    color: #fdffd6;
+    font-size: 25px;
+    text-align: center;
+    background-color:rgba(30, 8, 129, 0.914);
+    border-radius: 10px; /* Optional: Add rounded corners */
+    
+}
+.features_container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    text-align: center;
+    background-color: rgba(15, 168, 10, 0.914);
+    padding-bottom: 15vh;
+    border-radius: 10px;
+}
+
+.features_container h1 {
+    margin-top: 10vh;
+    display: inline-flex;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    justify-content:space-between;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    text-shadow: 0 2px 6px rgb(74, 0, 158), 0 9px 2px rgb(255, 0, 217);
+    text-wrap: no wrap;
+}
+
+.features_container h2 {
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+    justify-content:space-between;
+    color: #ffffff;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    background-color: rgba(73, 36, 197, 0.775);
+    border-radius: 10px;
+    align-items: center;
+}
+.features_container p {
+    font-family: "Mulish", sans-serif;
+    justify-content: space-between;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.914);
+    margin: 20px auto;
+    font-weight: bold;
+    margin-top: 10vh;
+
+
+}
